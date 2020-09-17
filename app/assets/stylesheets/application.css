@@ -67,11 +67,17 @@ html, body {
     padding: 4px;
     text-align: left;
   }
-  #notice, #warning {
+  #notice {
+    background: lightgreen;
+    margin: 1em 0;
+    padding: 4px;
+  }
+  #warning {
     background: rosybrown;
     margin: 1em 0;
     padding: 4px;
   }
+
   form label {
     display: block;
     line-height: 25px;
