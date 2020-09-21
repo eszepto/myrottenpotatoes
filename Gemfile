@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# use twitter authentication
+gem 'omniauth-twitter'
+
 # use Haml for templates 
 gem 'haml'
 
