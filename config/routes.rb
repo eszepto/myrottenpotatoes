@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get  'auth/failure' => 'sessions#failure'
   get  'auth/twitter', :as => 'login'
   
-  resources :movies
+  resources :movies 
   root :to => redirect('/movies')
 
   
