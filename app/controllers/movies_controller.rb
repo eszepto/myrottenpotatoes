@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
     skip_before_action :authenticate!, only: [ :show, :index ]
+
+
     def index
         @movies = Movie.all.order(:title) 
     end
@@ -7,6 +9,9 @@ class MoviesController < ApplicationController
     def show
         id = params[:id]
         @movie = Movie.find(id)
+        if @current_user
+            @review = @movie.reviews.find_by(:moviegoer_id => @current_user.id)
+        end
     end
 
     def new
