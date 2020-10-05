@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
         @review = Review.find params[:id]
         if @review.update(review_params) 
             flash[:notice] = "Review was successfully updated."
-            redirect_to movies_path(@movie)
+            redirect_to movie_path(@movie)
         else
             render 'edit'
         end

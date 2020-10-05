@@ -51,6 +51,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+group :development, :test do
+  gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
+end
+
 # setup Cucumber, RSpec, Guard support
 group :test do
   gem 'rspec-rails'

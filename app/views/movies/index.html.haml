@@ -1,5 +1,4 @@
 %h1 All Movies
-
 %table#movies
     %thead
         %tr
@@ -12,3 +11,4 @@
         = render :partial=>'movie', :collection=>@movies
 
 = link_to 'Add new movie', new_movie_path
+= javascript_pack_tag "movie_list_filter" 
