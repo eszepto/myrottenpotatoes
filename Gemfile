@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # use twitter authentication
 gem 'omniauth-twitter'
 
+gem 'themoviedb'
 # use Haml for templates 
 gem 'haml'
 

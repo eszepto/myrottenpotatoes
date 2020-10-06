@@ -52,6 +52,21 @@ html, body {
     font-size: 2em;
     font-style: normal;
   }
+  table#tmdb_movies {
+    margin: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    border-bottom: 2px solid black;
+  }
+  table#tmdb_movies th {
+    border: 2px solid white;
+    font-weight: bold;
+    background-color: wheat;
+  }
+  table#tmdb_movies th, table#tmdb_movies td {
+    padding: 4px;
+    text-align: left;
+  }
   table#movies {
     margin: 10px;
     border-collapse: collapse;
