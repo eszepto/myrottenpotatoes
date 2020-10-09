@@ -32,6 +32,8 @@ gem 'themoviedb'
 # use Haml for templates 
 gem 'haml'
 
+gem 'rubygems-update'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -64,6 +66,6 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels' # basic imperative step defs
   gem 'database_cleaner' # required by Cucumber
-  gem 'factory_girl_rails' # if using FactoryGirl
-  gem 'metric_fu'        # collect code metrics
+  gem 'capybara'         # lets Cucumber pretend to be a web browser
+  gem 'launchy'          # a useful debugging aid for user stories
 end
