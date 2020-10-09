@@ -19,9 +19,9 @@ module NavigationHelpers
       '/movies'  
     when /^the Create New Movie page/
       '/movies/new' 
-
-    when /^Men In Black page/
-      '/movies/1'
+       
+    when /^(.+) page/
+      "/movies/#{Movie.last.id}"
     
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
