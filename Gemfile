@@ -77,3 +77,4 @@ group :test do
   gem 'launchy'          # a useful debugging aid for user stories
 end
 
+gem 'rails_12factor'
