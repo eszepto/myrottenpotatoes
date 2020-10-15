@@ -43,4 +43,8 @@ class Movie < ActiveRecord::Base
         end
     end
 
+    def self.sort_by_title
+        return self.all.order(:title)
+      end
+
 end

@@ -66,6 +66,8 @@ end
 # setup Cucumber, RSpec, Guard support
 group :test do
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'factory_girl'
   gem 'guard-rspec'
   gem 'simplecov', :require => false
   gem 'cucumber-rails', :require => false
