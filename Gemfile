@@ -55,7 +55,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
-  gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
+  #gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
   gem 'sqlite3', '~> 1.4'
 end
 
@@ -78,3 +78,16 @@ group :test do
   gem 'capybara'         # lets Cucumber pretend to be a web browser
   gem 'launchy'          # a useful debugging aid for user stories
 end
+
+
+#use Haml for templates
+gem 'haml'
+
+#use for sending http request
+gem 'httparty'
+
+#use for storing keys
+gem 'dotenv-rails'
+
+gem 'omniauth-twitter'
+
