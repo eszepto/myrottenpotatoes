@@ -1,13 +1,12 @@
-require 'factory_girl_rails'
+# spec/models/movie_spec.rb:
+
 require 'rails_helper.rb'
 
-RSpec.describe Movie, type: :model do
-  before :each do
-    FactoryGirl.build(:movie , :title => 'A Fake Title ', :rating => 'PG')
-    FactoryGirl.build(:movie , :title => 'Concern ', :rating => 'PG')
-    FactoryGirl.build(:movie , :title => 'Barbie', :rating => 'PG')
-  end
-  it 'can return by title' do
-    expect(Movie.sort_by_title).to eq(Movie.all.order(:title))
-  end
+# in spec/models/movie_spec.rb
+describe Movie do
+    it 'should include rating and year in full name' do
+        # 'build' creates but doesn't save object; 'create' also saves it
+        movie = FactoryGirl.build(:movie, :title => 'Milk', :rating => 'R')
+        expect(movie.name_with_rating).to eq 'Milk (R)'
+    end
 end

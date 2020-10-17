@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
     def create
         @movie = Movie.new(movie_params)
         if @movie.save
-            flash[:notice] = "#{@movie.title} was successfully created."
+            flash[:notice] = "'#{@movie.title}' was successfully created."
             redirect_to movie_path(@movie)
         else
             render 'new'
@@ -36,7 +36,7 @@ class MoviesController < ApplicationController
     def update
         @movie = Movie.find params[:id]
         if @movie.update(movie_params) 
-            flash[:notice] = "#{@movie.title} was successfully updated."
+            flash[:notice] = "'#{@movie.title}' was successfully updated."
             redirect_to movies_path(@movie)
         else
             render 'edit'
@@ -46,7 +46,7 @@ class MoviesController < ApplicationController
     def destroy
         @movie = Movie.find params[:id]
         @movie.destroy
-        flash[:notice] = "Movie #{@movie.title} deleted."
+        flash[:notice] = "Movie '#{@movie.title}' deleted."
         redirect_to movies_path
     end
     
@@ -59,7 +59,7 @@ class MoviesController < ApplicationController
 
     def search_tmdb
         @search_terms = params[:search_terms]
-        @movies = Tmdb::Movie.find(@search_terms)
+        @movies = Movie.find_in_tmdb(@search_terms)
         if @movies
             render 'tmdb'
         else

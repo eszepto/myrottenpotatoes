@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'omniauth-twitter'
 
 gem 'themoviedb'
-# use Haml for templates 
+# use Haml for templates
 gem 'haml'
 
 gem 'rubygems-update'
@@ -78,4 +78,3 @@ group :test do
   gem 'capybara'         # lets Cucumber pretend to be a web browser
   gem 'launchy'          # a useful debugging aid for user stories
 end
-
