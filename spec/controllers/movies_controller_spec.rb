@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'date'
 
 describe MoviesController, :type => :controller  do
   describe 'searching TMDb' do
@@ -36,21 +37,46 @@ describe MoviesController, :type => :controller  do
       end
     end
 
-    describe 'add new movie' do
-      
-      it 'use right templete for add new movie page' do
+    describe 'Add a movie' do
+      before :each do
+        @fake_result = [double('movie1')]
         get :new
-        expect(response).to render_template('new')
       end
-
-      it 'can save movie and redirect to created movie page' do
-        post :create, params: {:movie => {:title => 'Test 1', :rating => 'PG', :release_date => '1999-01-01', :description => ''}}
-        @created_movie = Movie.last
-        expect(@created_movie.title).to eq('Test 1')
-        expect(@created_movie.rating).to eq('PG')
-       
-        expect(response).should redirect_to('/movies/%s' % (@created_movie.id))
-      end 
+      it 'selects the new template for rendering' do
+        expect(response).to render_template('new')
+        post :create, params: {
+          movie: {
+            :title => 'Aladdin',
+            :rating => 'G',
+            :release_date => '25-Nov-1992', 
+            :description => 'Aladdin blah blah'
+          }
+        }
+      end
+  
+      describe 'after add new movie' do
+        before :each do
+          post :create, params: {
+            movie: {
+              :title => 'Aladdin',
+              :rating => 'G',
+              :release_date => '25-Nov-1992', 
+              :description => 'Aladdin blah blah'
+            }
+          }
+        end
+        it 'redirect to show template for rendering' do
+          expect(response).to redirect_to(:controller => 'movies', :action => 'show', :id => 1)
+        end
+        it 'makes the new movie result available on that template' do
+          expect(assigns(:movie)).to have_attributes(
+            :title => 'Aladdin',
+            :rating => 'G', 
+            :release_date => DateTime.parse('25-Nov-1992'), 
+            :description => 'Aladdin blah blah')
+        end
+      end
+  
     end
 
     describe 'edit movie' do
