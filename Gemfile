@@ -70,4 +70,5 @@ group :test do
   gem 'metric_fu'        # collect code metrics
   gem 'capybara'         # lets Cucumber pretend to be a web browser
   gem 'launchy'          # a useful debugging aid for user stories
+  gem 'rails-controller-testing'
 end

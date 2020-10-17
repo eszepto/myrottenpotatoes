@@ -43,4 +43,8 @@ class Movie < ActiveRecord::Base
         end
     end
 
+    def name_with_rating
+        "#{self.title} (#{self.rating})"
+    end
+
 end
