@@ -24,11 +24,11 @@ Scenario: Edit movie
   Then I should be on Men In Black page
 
   When I follow "Edit info"
-  Then I should see "Edit Movie"
+  Then I should see "Edit Existing Movie"
   When I fill in "Title" with "Men In Black 2"
   And I fill in "Description" with "2 men vs alien"
-  And I press "Save Changes"
-  Then I should see "Men In Black 2 was successfully updated"
+  And I press "Update Movie Info"
+  Then I should see "'Men In Black 2' was successfully updated"
   And I should see "2 men vs alien"
 
 Scenario: Delete movie
@@ -40,7 +40,7 @@ Scenario: Delete movie
   And I press "Save Changes"
   Then I should be on Men In Black page
   When I follow "Delete"
-  Then I should see "Movie ’Men In Black’ deleted."
+  Then I should see "Movie 'Men In Black' deleted."
   And I should not see "More about Men In Black"
 
 Scenario: see details
