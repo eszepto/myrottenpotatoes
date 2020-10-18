@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-    skip_before_action :authenticate!, only: [ :show, :index, :search_tmdb]
+    skip_before_action :authenticate!#, only: [ :show, :index, :search_tmdb]
 
 
     def index
