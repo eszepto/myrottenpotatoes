@@ -5,11 +5,15 @@ Rails.application.routes.draw do
   get  'auth/failure' => 'sessions#failure'
   get  'auth/twitter', :as => 'login'
   
+  get '/movies/search_tmdb' => 'movies#search_tmdb'
+  post '/movies/createfromtmdb' => 'movies#create_from_tmdb', :as => 'createfromtmdb'
+  
   resources :movies do
     resources :reviews
   end
   root :to => redirect('/movies')
 
-  post '/movies/search_tmdb'
   
+  
+
 end
