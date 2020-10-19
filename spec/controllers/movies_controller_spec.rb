@@ -66,7 +66,7 @@ describe MoviesController, :type => :controller  do
           }
         end
         it 'redirect to show template for rendering' do
-          expect(response).to redirect_to(:controller => 'movies', :action => 'show', :id => 1)
+          expect(response).to redirect_to(:controller => 'movies', :action => 'show', :id => Movie.last.id)
         end
         it 'makes the new movie result available on that template' do
           expect(assigns(:movie)).to have_attributes(

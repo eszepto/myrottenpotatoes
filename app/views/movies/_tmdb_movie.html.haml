@@ -4,3 +4,9 @@
     %img{:src => 'https://image.tmdb.org/t/p/w300' + tmdb_movie.poster_path.to_s}
   %td= tmdb_movie.title 
   %td= tmdb_movie.release_date.to_date.strftime('%b, %m %Y')
+  %td
+    = form_tag({:controller => "movies",:action=>"create_from_tmdb"}, :method => "post") do
+      %input{:type=>"hidden",:name=>'tmdb_id', :value=>tmdb_movie.id ,}
+      = submit_tag 'Add this'
+      
+

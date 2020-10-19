@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-    skip_before_action :authenticate!#, only: [ :show, :index ]
+    skip_before_action :authenticate!#, only: [ :show, :index, :search_tmdb]
 
 
     def index
@@ -66,7 +66,21 @@ class MoviesController < ApplicationController
             flash[:warning] = "'#{params[:search_terms]}' was not found in TMDb."
             redirect_to movies_path
         end 
-        
+    end
+
+    def create_from_tmdb
+        movie_id = params[:tmdb_id]
+        m = Movie.get_from_tmdb(movie_id)
+        @movie = Movie.new({
+            :title => m["title"], 
+            :rating => "",    
+            :release_date => m["release_date"], 
+            :description => m["overview"]
+            })
+        if @movie.save
+            flash[:notice] = "'#{@movie.title}' was successfully created."
+            redirect_to movie_path(@movie)
+        end
     end
 
     private 
