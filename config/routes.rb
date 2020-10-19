@@ -13,7 +13,4 @@ Rails.application.routes.draw do
   end
   root :to => redirect('/movies')
 
-  
-  
-
 end
