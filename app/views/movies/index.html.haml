@@ -1,4 +1,7 @@
 %h1 All Movies
+
+
+
 %table#movies
     %thead
         %tr
@@ -19,3 +22,6 @@
     = text_field_tag 'search_terms'
     = submit_tag 'Search TMDb'
 
+
+= javascript_pack_tag 'movie_list_filter', "data-turbolinks-track" => false
+= javascript_pack_tag 'movie_popup', "data-turbolinks-track" => false

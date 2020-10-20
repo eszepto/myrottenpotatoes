@@ -42,6 +42,7 @@ var MovieListFilter = {
     setup: function() {
       // construct checkbox with label
       var labelAndCheckbox =
+      
         $('<label for="G_filter">G</label>' +
           '<input type="checkbox" id="G_filter" checked/>'+
           '<label for="PG_filter">PG</label>' +
