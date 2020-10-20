@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
         render(:partial => 'movie_popup', :object=>@movie) if request.xhr?
     end
 
-    def new
+    def new 
         @movie = Movie.new
     end
 

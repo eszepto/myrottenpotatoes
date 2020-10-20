@@ -29,8 +29,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'omniauth-twitter'
 
 gem 'themoviedb'
-# use Haml for templates
-gem 'haml'
 
 gem 'rubygems-update'
 
@@ -89,5 +87,4 @@ gem 'httparty'
 #use for storing keys
 gem 'dotenv-rails'
 
-gem 'omniauth-twitter'
 
