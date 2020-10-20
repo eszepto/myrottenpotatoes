@@ -9,6 +9,14 @@ class MoviesController < ApplicationController
     def show
         id = params[:id]
         @movie = Movie.find(id)
+        @avg_review = 0
+        if @movie.reviews.size > 0
+            @movie.reviews.each{|r| @avg_review += r.potatoes}
+            @avg_review = @avg_review / @movie.reviews.size
+        else
+            @avg_review = "This movie has not been reviewed"
+        end
+
         if @current_user
             @review = @movie.reviews.find_by(:moviegoer_id => @current_user.id)
         end
